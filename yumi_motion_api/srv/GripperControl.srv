@@ -1,0 +1,9 @@
+# GripperControl.srv
+
+# Request
+string side   # The side of the gripper (e.g., 'left' or 'right')
+string action # The action to perform (e.g., 'open' or 'close')
+
+# Response
+---
+# No response needed for this simple control service

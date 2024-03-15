@@ -10,7 +10,7 @@
  
   <!-- Initialize Arguments -->
   <arg name="sim" default="false"/> <!-- argument for running as a simulation instead of on the real robot controller -->
-  <arg name="robot_ip" default="192.168.125.1"/> <!-- argiment for the IP address of YuMi -->
+  <arg name="robot_ip" default="192.168.3.148"/> <!-- argiment for the IP address of YuMi -->
   <arg name="rviz" default="true"/> <!-- argument to lead or not load rviz during execution -->
   <arg name="gazebo" default="false"/> <!-- argument to lrun gazebo -->
 
