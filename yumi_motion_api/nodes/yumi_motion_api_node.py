@@ -67,6 +67,7 @@ def init_Moveit(planner="ESTkConfigDefault", planning_attempts=100, planning_tim
     group_l.set_num_planning_attempts(planning_attempts)
     group_l.set_planning_time(planning_time)
     print('For the Left arm the end effector link is')
+    print("end effector !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1")
     print(group_l.get_end_effector_link())
     print(group_l.get_planning_frame())
 
