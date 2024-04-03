@@ -17,7 +17,7 @@ def get_gripper_position():
         get_gripper_position = rospy.ServiceProxy('/yumi/rws/get_io_signal', GetIOSignal)
 
         response_l = get_gripper_position(signal='hand_ActualPosition_L')
-        print(response_l.value)
+        #print(response_l.value)
         gripper_l_position = float(response_l.value) / 10000.0
 
         response_r = get_gripper_position(signal='hand_ActualPosition_R')
@@ -93,7 +93,7 @@ def reroute_fake_callback(data):
 
     #rospy.loginfo(transformed_data)
 
-    #rospy.loginfo(transformed_data)
+    rospy.loginfo(transformed_data)
     moveit_pub.publish(transformed_data)
     #rospy.loginfo("Published transformed message to /yumi/egm/joint_state_controller/command")
 
@@ -147,7 +147,7 @@ def joint_state_callback(data):
     joint_state.position.append(gripper_r_position)
 
 
-    print(joint_state)
+    #print(joint_state)
     joint_state_pub.publish(joint_state)
 
 
@@ -157,24 +157,25 @@ def shutdown_hook():
     continue_updating = False
 
 
-rospy.init_node('joint_state_rerouter', anonymous=True)
+if __name__ == "__main__":
+    rospy.init_node('joint_state_rerouter', anonymous=True)
 
 
 
-moveit_pub = rospy.Publisher('/yumi/egm/joint_state_controller/command', Float64MultiArray, queue_size=10)
+    moveit_pub = rospy.Publisher('/yumi/egm/joint_state_controller/command', Float64MultiArray, queue_size=10)
 
-joint_state_pub = rospy.Publisher('/joint_states', JointState, queue_size=10)
+    joint_state_pub = rospy.Publisher('/joint_states', JointState, queue_size=10)
 
 
 
-rospy.Subscriber('/move_group/fake_controller_joint_states', JointState, reroute_fake_callback)
+    rospy.Subscriber('/move_group/fake_controller_joint_states', JointState, reroute_fake_callback)
 
-rospy.Subscriber('/yumi/rws/joint_states', JointState, joint_state_callback)
+    rospy.Subscriber('/yumi/rws/joint_states', JointState, joint_state_callback)
 
-# Start updating gripper position every second
-update_gripper_position()
+    # Start updating gripper position every second
+    update_gripper_position()
 
-# Set shutdown hook
-rospy.on_shutdown(shutdown_hook)
+    # Set shutdown hook
+    rospy.on_shutdown(shutdown_hook)
 
-rospy.spin()
+    rospy.spin()
