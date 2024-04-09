@@ -1,0 +1,23 @@
+<launch>
+    <arg name="robot_ip" default="192.168.3.148"/>
+
+    <!-- Launching first_launch.launch -->
+    <include file="$(find abb_robot_bringup_examples)/launch/ex3_rws_and_egm_yumi_robot.launch">
+        <!-- Add any arguments if needed -->
+        <arg name="robot_ip" value="$(arg robot_ip)"/>
+
+    </include>
+
+    <!-- Launching second_launch.launch -->
+    <include file="$(find yumi_moveit_config)/launch/demo.launch">
+        <!-- Add any arguments if needed -->
+    </include>
+
+    <!-- Launching a ROS node -->
+    <node name="topic_rerouter" pkg="yumi_motion_api" type="topic_reroute.py"/>
+
+    <node name="gripper_control" pkg="yumi_motion_api" type="gripper_control.py"/>
+
+    
+
+</launch>
