@@ -17,6 +17,9 @@
 
     <node name="gripper_control" pkg="yumi_motion_api" type="gripper_control.py"/>
 
+
+    <!-- adding egm session start  and refresh service -->
+    <node name="egm_service" pkg="yumi_motion_api" type="egm_service.py"/>
     
 
 </launch>

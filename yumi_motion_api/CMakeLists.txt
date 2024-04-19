@@ -171,6 +171,7 @@ catkin_install_python(PROGRAMS
   nodes/yumi_motion_api_node.py
   nodes/topic_reroute.py
   nodes/gripper_control.py
+  nodes/egm_service.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
