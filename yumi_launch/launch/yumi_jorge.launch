@@ -8,18 +8,18 @@
     </include>
 
     <!-- Launching second_launch.launch -->
-    <include file="$(find yumi_moveit_config)/launch/demo.launch">
-        <!-- Add any arguments if needed -->
-    </include>
-
+    <include file="$(find yumi_moveit_config)/launch/demo.launch"/>
     <!-- Launching a ROS node -->
     <node name="topic_rerouter" pkg="yumi_motion_api" type="topic_reroute.py"/>
 
     <node name="gripper_control" pkg="yumi_motion_api" type="gripper_control.py"/>
 
-
     <!-- adding egm session start  and refresh service -->
     <node name="egm_service" pkg="yumi_motion_api" type="egm_service.py"/>
+
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+
+
     
 
 </launch>
