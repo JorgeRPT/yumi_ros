@@ -1,0 +1,36 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/jorge/noetic_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/jorge/noetic_ws/src/abb_robot_driver/abb_egm_hardware_interface/include/**",
+        "/home/jorge/noetic_ws/src/abb_egm_rws_managers/include/**",
+        "/home/jorge/noetic_ws/src/abb_robot_driver/abb_egm_state_controller/include/**",
+        "/home/jorge/noetic_ws/src/abb_libegm/include/**",
+        "/home/jorge/noetic_ws/src/abb_librws/include/**",
+        "/home/jorge/noetic_ws/src/abb_robot_driver/abb_robot_cpp_utilities/include/**",
+        "/home/jorge/noetic_ws/src/abb_robot_driver/abb_rws_service_provider/include/**",
+        "/home/jorge/noetic_ws/src/abb_robot_driver/abb_rws_state_publisher/include/**",
+        "/home/jorge/noetic_ws/src/yumi_ros/gazebo_mimic/include/**",
+        "/home/jorge/noetic_ws/src/hri/libhri/include/**",
+        "/home/jorge/noetic_ws/src/hri_interface/include/**",
+        "/home/jorge/noetic_ws/src/moveit_grasps/include/**",
+        "/home/jorge/noetic_ws/src/rviz_camera_stream/include/**",
+        "/home/jorge/noetic_ws/src/yumi_ros/yumi_cameras/include/**",
+        "/home/jorge/noetic_ws/src/yumi_ros/yumi_hw/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
