@@ -638,7 +638,7 @@
   <joint name="joint_tcp_r" type="fixed">
     <parent link="yumi_link_7_r"/>
     <child link="tcp_link_r"/>
-    <origin xyz="0 0 0.135" rpy="0 0 0"/> <!-- Adjust the xyz values to position the TCP correctly -->
+    <origin xyz="0 0 0.1" rpy="0 0 0"/> <!-- Adjust the xyz values to position the TCP correctly -->
   </joint>
 
 
@@ -647,23 +647,7 @@
       <geometry>
         <sphere radius="0.01"/> <!-- Small sphere to represent the TCP -->
       </geometry>
-      <material name="Red"/>
-    </visual>
-  </link>
-
-  <joint name="joint_tcp_l" type="fixed">
-    <parent link="yumi_link_7_l"/>
-    <child link="tcp_link_l"/>
-    <origin xyz="0 0 0.135" rpy="0 0 0"/> <!-- Adjust the xyz values to position the TCP correctly -->
-  </joint>
-
-
-  <link name="tcp_link_l">
-    <visual>
-      <geometry>
-        <sphere radius="0.01"/> <!-- Small sphere to represent the TCP -->
-      </geometry>
-      <material name="Red"/>
+      <material name="Blue"/>
     </visual>
   </link>
 
