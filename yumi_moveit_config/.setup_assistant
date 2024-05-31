@@ -2,9 +2,10 @@ moveit_setup_assistant_config:
   URDF:
     package: yumi_description
     relative_path: urdf/yumi.urdf
+    xacro_args: ""
   SRDF:
     relative_path: config/yumi.srdf
   CONFIG:
-    author_name: Yoshua Nava
-    author_email: yoshua@kth.se
-    generated_timestamp: 1500457566
+    author_name: Jorge Teixeira
+    author_email: jrl.teixeira@campus.fct.unl.pt
+    generated_timestamp: 1717158826
