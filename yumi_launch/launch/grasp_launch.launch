@@ -1,0 +1,10 @@
+<launch>
+
+    <node name="moveit_grasps_demo" pkg="moveit_grasps" type="moveit_grasps_grasp_pipeline_demo">
+            <param name="ee_group_name" value="left_arm"/>
+            <param name="planning_group_name" value="left_arm"/>
+            <rosparam command="load" file="$(find moveit_grasps)/config_robot/yumi_grasp_data.yaml"/>
+            <rosparam command="load" file="$(find moveit_grasps)/config/moveit_grasps_config.yaml"/>
+    </node>
+
+</launch>

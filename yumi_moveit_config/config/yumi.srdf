@@ -22,6 +22,14 @@
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="tcp_link_r" parent_link="tcp_link_r" group="right_arm"/>
     <end_effector name="tcp_link_l" parent_link="tcp_link_l" group="left_arm"/>
+    <!-- <end_effector name="left_gripper" parent_link="yumi_link_7_l" group="left_arm">
+        <tcp_link>tcp_link_l</tcp_link>
+    </end_effector>
+
+    <end_effector name="right_gripper" parent_link="yumi_link_7_r" group="right_arm">
+    <tcp_link>tcp_link_r</tcp_link>
+    </end_effector> -->
+
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="world_joint" type="fixed" parent_frame="world" child_link="yumi_base_link"/>
     <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
