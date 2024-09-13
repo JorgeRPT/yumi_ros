@@ -63,6 +63,7 @@ find_package(catkin REQUIRED COMPONENTS
  add_service_files(
    FILES 
     GripperControl.srv
+    UrdfLinkPose.srv
 #   Service1.srv
 #   Service2.srv
 )
@@ -77,7 +78,8 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate added messages and services with any dependencies listed here
  generate_messages(
    DEPENDENCIES
-#   std_msgs
+    std_msgs
+    geometry_msgs
  )
 
 ################################################
@@ -172,6 +174,7 @@ catkin_install_python(PROGRAMS
   nodes/topic_reroute.py
   nodes/gripper_control.py
   nodes/egm_service.py
+  nodes/urdf_link_pose.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

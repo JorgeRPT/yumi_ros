@@ -76,8 +76,14 @@ class JointStateRerouter:
 
         # Combine with latest positions if one arm's data is missing
         if not left_positions:
+            print("Left arm data is missing. Using latest left arm positions.")
+            print(f"latest_left_arm_positions: {self.latest_left_arm_positions}")
             left_positions = self.latest_left_arm_positions
+            
+
         if not right_positions:
+            print("Right arm data is missing. Using latest right arm positions.")
+            print(f"latest_right_arm_positions: {self.latest_right_arm_positions}")
             right_positions = self.latest_right_arm_positions
 
         # Combining the left and right arm names and positions
@@ -103,7 +109,7 @@ class JointStateRerouter:
         transformed_data.data = new_positions
 
         # Log and publish the transformed data
-        rospy.loginfo(transformed_data)
+        #rospy.loginfo(transformed_data)
         self.moveit_pub.publish(transformed_data)
 
     def joint_state_callback(self, data):
@@ -132,13 +138,7 @@ class JointStateRerouter:
         left_positions = list(positions[:len(positions)//2])
         right_positions = list(positions[len(positions)//2:])
 
-        # Store the latest positions
-        self.latest_left_arm_positions = left_positions
-        self.latest_right_arm_positions = right_positions
         
-            # Print the latest positions to the console
-        rospy.loginfo("Latest left arm positions: %s", self.latest_left_arm_positions)
-        rospy.loginfo("Latest right arm positions: %s", self.latest_right_arm_positions)
 
 
         # Adjusting the 3rd position of the left arm
@@ -148,6 +148,14 @@ class JointStateRerouter:
         # Adjusting the 3rd position of the right arm
         if len(right_positions) > 2:
             right_positions.insert(6, right_positions.pop(2))
+
+        # Store the latest positions !!!!! nao sei o porque de estarem trocados !!!!!!
+        self.latest_left_arm_positions = right_positions
+        self.latest_right_arm_positions = left_positions 
+        
+            # Print the latest positions to the console
+        print("Joint Latest left arm positions: %s", self.latest_left_arm_positions)
+        print("Joint Latest right arm positions: %s", self.latest_right_arm_positions)
 
         # Combining the left and right arm positions
         new_positions = left_positions + right_positions
